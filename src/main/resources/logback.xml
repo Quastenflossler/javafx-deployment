@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date [%thread] %-5level %logger - %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    	<file>quastenflossler-javafx-deployment.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>quastenflossler-javafx-deployment-%d{yyyyMMdd}-%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date [%thread] %-5level %logger - %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="de.quastenflossler" level="TRACE"/>
+
+	<root level="TRACE">
+
+		<appender-ref ref="ROLLING" />
+		<appender-ref ref="STDOUT" />
+
+	</root>
+
+</configuration>
