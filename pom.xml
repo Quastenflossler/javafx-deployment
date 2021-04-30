@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.release>13</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <springframework.version>5.2.2.RELEASE</springframework.version>
+        <springframework.version>5.2.9.RELEASE</springframework.version>
         <javafx.version>13</javafx.version>
     </properties>
 
